@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#000000" />
+    <title>Desk</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="navbar">
+        <button class="icon-btn avatar" id="avatarBtn" aria-label="Account">G</button>
+        <div class="nav-title">Grok Bot <span class="dim">›</span></div>
+        <button class="icon-btn" id="searchBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+        </button>
+        <button class="icon-btn" id="bellBtn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg>
+          <span class="dot" id="bellDot" hidden></span>
+        </button>
+      </header>
+      <div id="banner" class="banner" hidden></div>
+
+      <main id="main">
+        <section id="view-home" class="view active"></section>
+        <section id="view-agents" class="view"></section>
+        <section id="view-activity" class="view"></section>
+        <section id="view-account" class="view"></section>
+        <section id="view-coin" class="view overlay" hidden></section>
+        <section id="view-audit" class="view overlay" hidden></section>
+        <section id="view-agent" class="view overlay" hidden></section>
+        <section id="view-search" class="view overlay" hidden></section>
+      </main>
+
+      <nav class="tabbar" id="tabbar">
+        <button data-tab="home" class="tab on">Home</button>
+        <button data-tab="agents" class="tab">Agents</button>
+        <button data-tab="activity" class="tab">Activity</button>
+        <button data-tab="account" class="tab">Account</button>
+      </nav>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
