@@ -65,9 +65,12 @@ export function drawLine(canvas, { points = [], marks = [], emptyLabel = "Waitin
     ctx.arc(x, y, 3.5, 0, Math.PI * 2);
     ctx.fill();
     if (m.label) {
-      ctx.font = "11px -apple-system, system-ui, sans-serif";
+      ctx.font = "700 13px -apple-system, system-ui, sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "bottom";
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#000";
+      ctx.strokeText(String(m.label), x, y - 6);
       ctx.fillText(String(m.label), x, y - 6);
     }
   });
@@ -128,10 +131,13 @@ export function drawCandles(canvas, { candles = [], exitLines = {} } = {}) {
     ctx.setLineDash([]);
     if (label) {
       ctx.fillStyle = "#ff9f0a";
-      ctx.font = "11px -apple-system, system-ui, sans-serif";
+      ctx.font = "700 13px -apple-system, system-ui, sans-serif";
       ctx.textAlign = "left";
       ctx.textBaseline = "bottom";
-      ctx.fillText(String(label), 10, y - 2);
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#000";
+      ctx.strokeText(String(label), 16, y - 3);
+      ctx.fillText(String(label), 16, y - 3);
     }
   };
   if (exitLines.trail != null) drawExit(exitLines.trail, true, exitLines.trailLabel || "");
